@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Counter (color) types.
-enum CounterType { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+enum CounterType { monday, tuesday, wednesday, thursday, friday, saturday, sunday }
 
 /// An integer counter class.
 class Counter {
@@ -85,13 +85,13 @@ class Counter {
 
   /// A map with the corresponding ARGB color value for each counter type.
   static const Map<CounterType, Color> _counterColors = {
-    CounterType.Monday: Colors.yellow,
-    CounterType.Tuesday: Colors.pink,
-    CounterType.Wednesday: Colors.green,
-    CounterType.Thursday: Colors.orange,
-    CounterType.Friday: Colors.blue,
-    CounterType.Saturday: Colors.purple,
-    CounterType.Sunday: Colors.red,
+    CounterType.monday: Colors.yellow,
+    CounterType.tuesday: Colors.pink,
+    CounterType.wednesday: Colors.green,
+    CounterType.thursday: Colors.orange,
+    CounterType.friday: Colors.blue,
+    CounterType.saturday: Colors.purple,
+    CounterType.sunday: Colors.red,
   };
 
 //#endregion
