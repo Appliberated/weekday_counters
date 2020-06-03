@@ -13,6 +13,7 @@ class AppStrings {
   static const String drawerTitle = appName;
   static const String settingsItemTitle = 'Settings';
   static const String helpItemTitle = 'Help & feedback';
+  static const String rateItemTitle = 'Rate app';
 
   //#endregion
 
@@ -21,8 +22,6 @@ class AppStrings {
   static const Map<MenuAction, String> menuActions = {
     MenuAction.reset: 'Reset counter',
     MenuAction.share: 'Share...',
-    MenuAction.rate: 'Rate app',
-    MenuAction.help: 'Help',
   };
 
   static const String resetConfirm = 'Reset counter to zero?';

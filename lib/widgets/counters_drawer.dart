@@ -8,6 +8,9 @@ import 'package:weekday_counters/models/counter.dart';
 import 'package:weekday_counters/utils/utils.dart';
 import 'package:weekday_counters/widgets/color_list_tile.dart';
 
+/// Drawer extra actions enumeration.
+enum DrawerExtraActions { settings, help, rate }
+
 /// A material design drawer that shows navigation links for all available counters.
 class CountersDrawer extends StatelessWidget {
   /// Creates a counters drawer widget.
@@ -15,8 +18,7 @@ class CountersDrawer extends StatelessWidget {
     Key key,
     @required this.title,
     this.counters,
-    this.onSelected,
-    this.onSettings,
+    this.onExtraSelected,
   })  : assert(title != null),
         super(key: key);
 
@@ -27,9 +29,12 @@ class CountersDrawer extends StatelessWidget {
   final Counters counters;
 
   /// Called when the user taps a drawer list tile.
-  final void Function(CounterType value) onSelected;
+  final void Function(DrawerExtraActions value) onExtraSelected;
 
-  final void Function() onSettings;
+  void _onExtraActionTap(BuildContext context, DrawerExtraActions action) {
+    Navigator.pop(context);
+    if (onExtraSelected != null) onExtraSelected(action);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +49,17 @@ class CountersDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text(AppStrings.settingsItemTitle),
-              onTap: () {
-                Navigator.pop(context);
-                if (onSettings != null) onSettings();
-              },
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.settings),
             ),
             ListTile(
               leading: Icon(Icons.help_outline),
               title: Text(AppStrings.helpItemTitle),
-              onTap: () {},
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.help),
+            ),
+            ListTile(
+              leading: Icon(Icons.rate_review),
+              title: Text(AppStrings.rateItemTitle),
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.rate),
             ),
           ],
         ),
@@ -79,9 +86,7 @@ class CountersDrawer extends StatelessWidget {
       subtitle: toDecimalString(context, counters[counterType].value),
       enabled: counterType == counters.current.type,
       selected: counterType == counters.current.type,
-      onTap: () {
-        if (onSelected != null) onSelected(counterType);
-      },
+      onTap: () => Navigator.pop(context),
     );
   }
 }

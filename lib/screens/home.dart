@@ -14,7 +14,7 @@ import 'package:weekday_counters/widgets/counter_display.dart';
 import 'package:weekday_counters/widgets/counters_drawer.dart';
 
 /// Overflow menu items enumeration.
-enum MenuAction { reset, share, rate, help }
+enum MenuAction { reset, share }
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -40,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   /// Loads counter values from persistent storage.
   Future<void> _loadCounters() async {
     await _counters.load();
+    await _appSettings.load();
     setState(() {
       /* Refresh after loading counters. */
     });
@@ -64,13 +65,22 @@ class _HomeScreenState extends State<HomeScreen> {
         final String value = toDecimalString(context, _counters.current.value);
         Share.share(AppStrings.shareText(name, value), subject: name);
         break;
-      case MenuAction.rate:
-        // Launch the Google Play Store page to allow the user to rate the app
-        launchUrl(_scaffoldKey.currentState, AppStrings.rateAppURL);
+    }
+  }
+
+  void drawerExtraSelection(DrawerExtraActions item) {
+    switch (item) {
+      case DrawerExtraActions.settings:
+        // Load the Settings screen
+        _loadSettingsScreen();
         break;
-      case MenuAction.help:
+      case DrawerExtraActions.help:
         // Launch the app online help url
         launchUrl(_scaffoldKey.currentState, AppStrings.helpURL);
+        break;
+      case DrawerExtraActions.rate:
+        // Launch the Google Play Store page to allow the user to rate the app
+        launchUrl(_scaffoldKey.currentState, AppStrings.rateAppURL);
         break;
     }
   }
@@ -139,8 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return CountersDrawer(
       title: AppStrings.drawerTitle,
       counters: _counters,
-      onSelected: (CounterType value) => Navigator.pop(context),
-      onSettings: _loadSettingsScreen,
+      onExtraSelected: drawerExtraSelection,
     );
   }
 
