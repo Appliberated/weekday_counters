@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Navigates to the Settings screen, and refreshes on return.
   Future<void> _loadSettingsScreen() async {
-    await Navigator.push(context,
+    await Navigator.push<void>(context,
         MaterialPageRoute(builder: (context) => SettingsScreen(appSettings: _appSettings)));
     setState(() {
       /* Refresh after returning from Settings screen. */
