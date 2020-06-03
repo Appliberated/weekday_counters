@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:weekday_counters/common/app_strings.dart';
 import 'package:weekday_counters/models/counter.dart';
 import 'package:weekday_counters/utils/utils.dart';
 import 'package:weekday_counters/widgets/color_list_tile.dart';
@@ -15,6 +16,7 @@ class CountersDrawer extends StatelessWidget {
     @required this.title,
     this.counters,
     this.onSelected,
+    this.onSettings,
   })  : assert(title != null),
         super(key: key);
 
@@ -27,6 +29,8 @@ class CountersDrawer extends StatelessWidget {
   /// Called when the user taps a drawer list tile.
   final void Function(CounterType value) onSelected;
 
+  final void Function() onSettings;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -36,6 +40,20 @@ class CountersDrawer extends StatelessWidget {
           children: <Widget>[
             _buildDrawerHeader(context),
             ...CounterType.values.map((type) => _buildCounterListTile(context, type)),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text(AppStrings.settingsItemTitle),
+              onTap: () {
+                Navigator.pop(context);
+                if (onSettings != null) onSettings();
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.help_outline),
+              title: Text(AppStrings.helpItemTitle),
+              onTap: () {},
+            ),
           ],
         ),
       ),

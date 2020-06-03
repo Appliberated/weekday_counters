@@ -8,7 +8,13 @@ import 'package:weekday_counters/screens/home.dart';
 class AppStrings {
   static const String appName = 'Weekday Counters';
 
+  //#region Drawer
+
   static const String drawerTitle = appName;
+  static const String settingsItemTitle = 'Settings';
+  static const String helpItemTitle = 'Help & feedback';
+
+  //#endregion
 
   //#region Menu items and functionality
 
@@ -35,7 +41,17 @@ class AppStrings {
   //#region Main functionality
 
   static const String incrementTooltip = 'Increment';
+  static const String incrementHeroTag = 'incrementHeroTag';
   static const String decrementTooltip = 'Decrement';
+  static const String decrementHeroTag = 'decrementHeroTag';
+
+  //#endregion
+
+  //#region Settings
+
+  static const String settingsTitle = 'Settings';
+  static const String counterTapModeTitle = 'Counter tap mode';
+  static const String counterTapModeSubtitle = 'Tap anywhere to increase counter';
 
 //#endregion
 }

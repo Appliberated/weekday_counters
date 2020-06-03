@@ -4,8 +4,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
+import 'package:weekday_counters/common/app_settings.dart';
 import 'package:weekday_counters/common/app_strings.dart';
 import 'package:weekday_counters/models/counter.dart';
+import 'package:weekday_counters/screens/settings_screen.dart';
 import 'package:weekday_counters/utils/utils.dart';
 import 'package:weekday_counters/widgets/accept_cancel_dialog.dart';
 import 'package:weekday_counters/widgets/counter_display.dart';
@@ -26,6 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
   /// The map of counters for each counter type.
   final Counters _counters = Counters();
 
+  /// The current app settings.
+  final AppSettings _appSettings = AppSettings();
+
   @override
   void initState() {
     super.initState();
@@ -35,13 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
   /// Loads counter values from persistent storage.
   Future<void> _loadCounters() async {
     await _counters.load();
-    setState(() {});
-  }
-
-  /// Select and display the specified counter when its drawer list tile is tapped.
-  void _onDrawerCounterTap(CounterType counterType) {
-//    setState(() => _counters.currentType = counterType);
-    Navigator.pop(context);
+    setState(() {
+      /* Refresh after loading counters. */
+    });
   }
 
   /// Performs the tasks of the popup menu items (reset, share, rate, and help).
@@ -74,20 +75,36 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  /// Navigates to the Settings screen, and refreshes on return.
+  Future<void> _loadSettingsScreen() async {
+    await Navigator.push(context,
+        MaterialPageRoute(builder: (context) => SettingsScreen(appSettings: _appSettings)));
+    setState(() {
+      /* Refresh after returning from Settings screen. */
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool isPortrait = MediaQuery.of(context).size.height >= 500;
+
+    final CounterDisplay counterDisplay = CounterDisplay(
+      value: _counters.current.value,
+      color: _counters.current.color,
+      isPortrait: isPortrait,
+    );
 
     return Scaffold(
       key: _scaffoldKey,
       appBar: _buildAppBar(),
       drawer: _buildDrawer(),
-      body: CounterDisplay(
-        value: _counters.current.value,
-        color: _counters.current.color,
-        isPortrait: isPortrait,
-      ),
-      floatingActionButton: _buildFABs(isPortrait),
+      body: _appSettings.counterTapMode
+          ? GestureDetector(
+              onTap: () => setState(() => _counters.current.increment()),
+              child: counterDisplay,
+            )
+          : counterDisplay,
+      floatingActionButton: !(_appSettings.counterTapMode) ? _buildFABs(isPortrait) : null,
     );
   }
 
@@ -121,9 +138,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildDrawer() {
     return CountersDrawer(
       title: AppStrings.drawerTitle,
-//      currentCounter: _counters.current.type,
       counters: _counters,
-      onSelected: _onDrawerCounterTap,
+      onSelected: (CounterType value) => Navigator.pop(context),
+      onSettings: _loadSettingsScreen,
     );
   }
 
@@ -134,12 +151,14 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         FloatingActionButton(
+          heroTag: AppStrings.decrementHeroTag,
           onPressed: () => setState(() => _counters.current.decrement()),
           tooltip: AppStrings.decrementTooltip,
           child: const Icon(Icons.remove),
         ),
         isPortrait ? const SizedBox(height: 16.0) : const SizedBox(width: 16.0),
         FloatingActionButton(
+          heroTag: AppStrings.incrementHeroTag,
           onPressed: () => setState(() => _counters.current.increment()),
           tooltip: AppStrings.incrementTooltip,
           child: const Icon(Icons.add),
