@@ -1,4 +1,4 @@
-// Copyright 2020 Appliberated. All rights reserved.
+// Copyright 2020-2022 TechAurelian. All rights reserved.
 // Use of this source code is governed by an MIT-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ class AppStrings {
   static const String rateAppURL =
       'https://play.google.com/store/apps/details?id=com.appliberated.weekdaycounters';
 
-  static const String helpURL = 'https://appliberated.com/weekdaycounters/';
+  static const String helpURL = 'https://techaurelian.com/weekdaycounters/';
 
   //#endregion
 
