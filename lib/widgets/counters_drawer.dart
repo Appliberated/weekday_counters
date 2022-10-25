@@ -3,10 +3,11 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:weekday_counters/common/app_strings.dart';
-import 'package:weekday_counters/models/counter.dart';
-import 'package:weekday_counters/utils/utils.dart';
-import 'package:weekday_counters/widgets/color_list_tile.dart';
+
+import '../common/app_strings.dart';
+import '../models/counter.dart';
+import '../utils/utils.dart';
+import 'color_list_tile.dart';
 
 /// Drawer extra actions enumeration.
 enum DrawerExtraActions { settings, help, rate }
@@ -15,12 +16,11 @@ enum DrawerExtraActions { settings, help, rate }
 class CountersDrawer extends StatelessWidget {
   /// Creates a counters drawer widget.
   const CountersDrawer({
-    Key key,
-    @required this.title,
-    this.counters,
+    super.key,
+    required this.title,
+    required this.counters,
     this.onExtraSelected,
-  })  : assert(title != null),
-        super(key: key);
+  });
 
   /// The title of the drawer displayed in the drawer header.
   final String title;
@@ -29,11 +29,11 @@ class CountersDrawer extends StatelessWidget {
   final Counters counters;
 
   /// Called when the user taps a drawer list tile.
-  final void Function(DrawerExtraActions value) onExtraSelected;
+  final void Function(DrawerExtraActions value)? onExtraSelected;
 
   void _onExtraActionTap(BuildContext context, DrawerExtraActions action) {
     Navigator.pop(context);
-    if (onExtraSelected != null) onExtraSelected(action);
+    onExtraSelected?.call(action);
   }
 
   @override
@@ -45,20 +45,20 @@ class CountersDrawer extends StatelessWidget {
           children: <Widget>[
             _buildDrawerHeader(context),
             ...CounterType.values.map((type) => _buildCounterListTile(context, type)),
-            Divider(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(AppStrings.settingsItemTitle),
+              leading: const Icon(Icons.settings),
+              title: const Text(AppStrings.settingsItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.settings),
             ),
             ListTile(
-              leading: Icon(Icons.help_outline),
-              title: Text(AppStrings.helpItemTitle),
+              leading: const Icon(Icons.help_outline),
+              title: const Text(AppStrings.helpItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.help),
             ),
             ListTile(
-              leading: Icon(Icons.rate_review),
-              title: Text(AppStrings.rateItemTitle),
+              leading: const Icon(Icons.rate_review),
+              title: const Text(AppStrings.rateItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.rate),
             ),
           ],

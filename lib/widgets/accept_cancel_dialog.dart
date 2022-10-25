@@ -18,18 +18,18 @@ void showAcceptCancelDialog(
         return AlertDialog(
           content: Text(message),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
+              style: TextButton.styleFrom(foregroundColor: Colors.black),
               child: Text(cancelButton.toUpperCase()),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            FlatButton(
+            TextButton(
+              style: TextButton.styleFrom(foregroundColor: Colors.black),
               child: Text(acceptButton.toUpperCase()),
               onPressed: () {
-                if (onAccept != null) {
-                  onAccept();
-                }
+                onAccept();
                 Navigator.of(context).pop();
               },
             ),

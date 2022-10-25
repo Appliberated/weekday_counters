@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:weekday_counters/common/app_settings.dart';
-import 'package:weekday_counters/common/app_strings.dart';
+
+import '../common/app_settings.dart';
+import '../common/app_strings.dart';
 
 class SettingsScreen extends StatefulWidget {
-  SettingsScreen({
-    Key key,
-    @required this.appSettings,
-  })  : assert(appSettings != null),
-        super(key: key);
+  const SettingsScreen({
+    super.key,
+    required this.appSettings,
+  });
 
   final AppSettings appSettings;
 
   @override
-  _SettingsScreenState createState() => _SettingsScreenState();
+  State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
@@ -24,15 +24,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppStrings.settingsTitle),
+        title: const Text(AppStrings.settingsTitle),
       ),
       body: ListView(
         children: [
           SwitchListTile(
             activeColor: Colors.black,
             value: widget.appSettings.counterTapMode,
-            title: Text(AppStrings.counterTapModeTitle),
-            subtitle: Text(AppStrings.counterTapModeSubtitle),
+            title: const Text(AppStrings.counterTapModeTitle),
+            subtitle: const Text(AppStrings.counterTapModeSubtitle),
             onChanged: (bool value) => setState(() => widget.appSettings.counterTapMode = value),
           )
         ],

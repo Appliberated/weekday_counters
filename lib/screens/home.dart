@@ -3,28 +3,29 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
-import 'package:weekday_counters/common/app_settings.dart';
-import 'package:weekday_counters/common/app_strings.dart';
-import 'package:weekday_counters/models/counter.dart';
-import 'package:weekday_counters/screens/settings_screen.dart';
-import 'package:weekday_counters/utils/utils.dart';
-import 'package:weekday_counters/widgets/accept_cancel_dialog.dart';
-import 'package:weekday_counters/widgets/counter_display.dart';
-import 'package:weekday_counters/widgets/counters_drawer.dart';
+
+import 'package:share_plus/share_plus.dart';
+
+import '../common/app_settings.dart';
+import '../common/app_strings.dart';
+import '../models/counter.dart';
+import '../utils/utils.dart';
+import '../widgets/accept_cancel_dialog.dart';
+import '../widgets/counter_display.dart';
+import '../widgets/counters_drawer.dart';
+import 'settings_screen.dart';
 
 /// Overflow menu items enumeration.
 enum MenuAction { reset, share }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  /// The AppBar's action needs this key to find its own Scaffold.
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   /// The map of counters for each counter type.
   final Counters _counters = Counters();
 
@@ -76,11 +77,11 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
       case DrawerExtraActions.help:
         // Launch the app online help url
-        launchUrl(_scaffoldKey.currentState, AppStrings.helpURL);
+        launchUrlExternal(AppStrings.helpURL);
         break;
       case DrawerExtraActions.rate:
         // Launch the Google Play Store page to allow the user to rate the app
-        launchUrl(_scaffoldKey.currentState, AppStrings.rateAppURL);
+        launchUrlExternal(AppStrings.rateAppURL);
         break;
     }
   }
@@ -105,7 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     return Scaffold(
-      key: _scaffoldKey,
       appBar: _buildAppBar(),
       drawer: _buildDrawer(),
       body: _appSettings.counterTapMode
@@ -137,8 +137,8 @@ class _HomeScreenState extends State<HomeScreen> {
         .map(
           (item) => PopupMenuItem<MenuAction>(
             value: item,
-            child: Text(AppStrings.menuActions[item]),
             enabled: !(item == MenuAction.reset && _counters.current.value == 0),
+            child: Text(AppStrings.menuActions[item]!),
           ),
         )
         .toList();
