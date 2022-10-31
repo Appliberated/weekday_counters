@@ -1,8 +1,14 @@
 # Weekday Counters
 
-Weekday Counters is an easy to use counter app for Android. It gives you a different counter for each day of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. You can increment or decrement the counter, reset its value back to zero, or share it by email, messengers, or in social networks.
+Weekday Counters is an easy-to-use Hello World counter app for Android. It gives you a different counter for each day of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. You can increment or decrement the counter, reset its value back to zero, or share it by email, messengers, or in social networks.
 
-Weekday Counters is built with Flutter, Google's UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
+"Hello World" programs are pretty famous, even if all they do is write "Hello World!" on the screen. When learning a new programming language or platform, starting with such a simple program has become a tradition.
+
+Weekday Counters is built with [Flutter](https://flutter.dev), an open source framework for building beautiful, natively compiled, multi-platform applications from a single codebase.
+
+## Screenshot
+
+<img width="270" src="repo-assets/weekdaycounters-readme-screenshot-mobile.png" alt="Weekday Counters screenshot">
 
 ## Listed on
 
