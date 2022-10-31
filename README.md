@@ -1,16 +1,21 @@
-# weekday_counters
+# Weekday Counters
 
-A new Flutter project.
+Weekday Counters is an easy to use counter app for Android. It gives you a different counter for each day of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. You can increment or decrement the counter, reset its value back to zero, or share it by email, messengers, or in social networks.
 
-## Getting Started
+Weekday Counters is built with Flutter, Google's UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 
-This project is a starting point for a Flutter application.
+## Listed on
 
-A few resources to get you started if this is your first Flutter project:
+**[It's All Widgets!](https://itsallwidgets.com/weekday-counters)**  
+An open list of apps built with Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Contributing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thank you for contributing! Weekday Counters is designed to be as simple and useless as possible, but you can still help with:
+
+* testing and reporting bugs
+* creating a nice icon to replace the [current one](android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
+
+## License
+
+Weekday Counters is released under the [MIT License](/LICENSE).
