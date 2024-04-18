@@ -1,6 +1,6 @@
 {
-    "name": "weekday_counters",
-    "short_name": "weekday_counters",
+    "name": "Weekday Counters",
+    "short_name": "Weekday Counters",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
