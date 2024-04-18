@@ -2,7 +2,6 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 // @author TechAurelian <dev@techaurelian.com> (https://techaurelian.com)
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,8 +13,6 @@ enum CounterType { monday, tuesday, wednesday, thursday, friday, saturday, sunda
 class Counter {
   /// Creates a counter of the specified [type].
   Counter(this.type);
-
-  //#region Counter value
 
   /// The counter value.
   int _value = 0;
@@ -44,12 +41,8 @@ class Counter {
     _setValue(0);
   }
 
-  //#endregion
-
-  //#region Persistent storage
-
   /// Returns the persistent storage key for each counter type.
-  static String _counterKey(CounterType type) => '${describeEnum(type)}_counter';
+  static String _counterKey(CounterType type) => '${type.name}_counter';
 
   /// Saves the counter value to persistent storage.
   Future<void> _saveValue() async {
@@ -61,10 +54,6 @@ class Counter {
   void loadValue(SharedPreferences prefs) {
     _value = prefs.getInt(_counterKey(type)) ?? 0;
   }
-
-  //#endregion
-
-  //#region Counter type, color, name
 
   /// The counter type.
   final CounterType type;
@@ -80,8 +69,8 @@ class Counter {
 
   /// Returns the name of the specified counter type (e.g. "Black Counter").
   static String nameOf(CounterType type) {
-    final String name = describeEnum(type);
-    return '${name.substring(0, 1).toUpperCase()}${name.substring(1).toLowerCase()} Counter';
+    final String name = type.name;
+    return '${name[0].toUpperCase()}${name.substring(1).toLowerCase()} Counter';
   }
 
   /// A map with the corresponding ARGB color value for each counter type.
@@ -94,8 +83,6 @@ class Counter {
     CounterType.saturday: Colors.purple,
     CounterType.sunday: Colors.red,
   };
-
-//#endregion
 }
 
 /// Provides a map of counters for each counter type, and keeps a reference to the current counter.

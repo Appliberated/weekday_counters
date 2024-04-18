@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'common/app_strings.dart';
-import 'screens/home.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const CountersApp());
@@ -20,25 +20,19 @@ class CountersApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      theme: ThemeData(
-        colorScheme: const ColorScheme.light(
-          primary: Colors.white,
-          onPrimary: Colors.black,
-          secondary: Colors.white,
-          onSecondary: Colors.black,
+
+      // A black and white theme to go with the app's colored counters
+      theme: ThemeData.from(
+        colorScheme: ColorScheme.light(
+          primary: Colors.black,
+          surface: Colors.white,
           onSurface: Colors.black,
+          surfaceTint: Colors.white,
+          primaryContainer: Colors.white,
+          onPrimaryContainer: Colors.black,
+          outlineVariant: Colors.grey.shade200,
         ),
       ),
-      // theme: ThemeData(
-      //   primarySwatch: Colors.white.createMaterialColor(),
-      //   buttonTheme: ButtonThemeData(
-      //     colorScheme: ColorScheme.fromSwatch(
-      //       primarySwatch: Colors.black.createMaterialColor(),
-      //     ),
-      //   ),
-      //   visualDensity: VisualDensity.adaptivePlatformDensity,
-      //   typography: Typography.material2018(),
-      // ),
       home: const HomeScreen(),
     );
   }

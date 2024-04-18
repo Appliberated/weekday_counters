@@ -10,7 +10,7 @@ import '../utils/utils.dart';
 import 'color_list_tile.dart';
 
 /// Drawer extra actions enumeration.
-enum DrawerExtraActions { settings, help, rate }
+enum DrawerExtraActions { settings, about, rate, viewSource }
 
 /// A material design drawer that shows navigation links for all available counters.
 class CountersDrawer extends StatelessWidget {
@@ -43,7 +43,7 @@ class CountersDrawer extends StatelessWidget {
         selectedColor: Colors.black,
         child: ListView(
           children: <Widget>[
-            _buildDrawerHeader(context),
+            _buildDrawerHeader(context, counters.current.color),
             ...CounterType.values.map((type) => _buildCounterListTile(context, type)),
             const Divider(),
             ListTile(
@@ -53,9 +53,15 @@ class CountersDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.help_outline),
-              title: const Text(AppStrings.helpItemTitle),
-              onTap: () => _onExtraActionTap(context, DrawerExtraActions.help),
+              title: const Text(AppStrings.aboutItemTitle),
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.about),
             ),
+            ListTile(
+              leading: const Icon(Icons.flutter_dash),
+              title: const Text(AppStrings.viewSourceItemTitle),
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.viewSource),
+            ),
+            const Divider(),
             ListTile(
               leading: const Icon(Icons.rate_review),
               title: const Text(AppStrings.rateItemTitle),
@@ -67,13 +73,13 @@ class CountersDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildDrawerHeader(BuildContext context) {
+  Widget _buildDrawerHeader(BuildContext context, Color color) {
     return SizedBox(
       height: kToolbarHeight + 8.0,
       child: DrawerHeader(
         child: Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(color: color),
         ),
       ),
     );

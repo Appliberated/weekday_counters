@@ -3,6 +3,7 @@
 // @author TechAurelian <dev@techaurelian.com> (https://techaurelian.com)
 
 import 'package:flutter/material.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 /// Formats [number] as a decimal, inserting locale-appropriate thousands separators as necessary.

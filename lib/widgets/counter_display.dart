@@ -27,8 +27,9 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? counterStyle =
-        isPortrait ? Theme.of(context).textTheme.headline1 : Theme.of(context).textTheme.headline2;
+    final TextStyle? counterStyle = isPortrait
+        ? Theme.of(context).textTheme.displayLarge
+        : Theme.of(context).textTheme.displayMedium;
 
     return Container(
       alignment: Alignment.center,

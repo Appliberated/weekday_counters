@@ -54,7 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
         // Reset the counter after asking for confirmation.
         showAcceptCancelDialog(
           context,
-          AppStrings.resetConfirm,
+          AppStrings.resetConfirmTitle,
+          AppStrings.resetConfirmMessage,
           AppStrings.resetConfirmReset,
           AppStrings.resetConfirmCancel,
           () => setState(() => _counters.current.reset()),
@@ -75,9 +76,13 @@ class _HomeScreenState extends State<HomeScreen> {
         // Load the Settings screen
         _loadSettingsScreen();
         break;
-      case DrawerExtraActions.help:
+      case DrawerExtraActions.about:
         // Launch the app online help url
-        launchUrlExternal(AppStrings.helpURL);
+        launchUrlExternal(AppStrings.aboutURL);
+        break;
+      case DrawerExtraActions.viewSource:
+        // Launch the app source code repo url
+        launchUrlExternal(AppStrings.viewSourceURL);
         break;
       case DrawerExtraActions.rate:
         // Launch the Google Play Store page to allow the user to rate the app
@@ -159,14 +164,14 @@ class _HomeScreenState extends State<HomeScreen> {
       direction: isPortrait ? Axis.vertical : Axis.horizontal,
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        FloatingActionButton(
+        FloatingActionButton.large(
           heroTag: AppStrings.decrementHeroTag,
           onPressed: () => setState(() => _counters.current.decrement()),
           tooltip: AppStrings.decrementTooltip,
           child: const Icon(Icons.remove),
         ),
         isPortrait ? const SizedBox(height: 16.0) : const SizedBox(width: 16.0),
-        FloatingActionButton(
+        FloatingActionButton.large(
           heroTag: AppStrings.incrementHeroTag,
           onPressed: () => setState(() => _counters.current.increment()),
           tooltip: AppStrings.incrementTooltip,

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 /// Displays a Material dialog with "accept" and "cancel" buttons.
 void showAcceptCancelDialog(
   BuildContext context,
+  String title,
   String message,
   String acceptButton,
   String cancelButton,
@@ -16,6 +17,7 @@ void showAcceptCancelDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          title: Text(title),
           content: Text(message),
           actions: <Widget>[
             TextButton(
