@@ -53,18 +53,18 @@ class CountersDrawer extends StatelessWidget {
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.settings),
             ),
             ListTile(
-              leading: const Icon(Icons.help_outline),
+              leading: const Icon(Icons.help),
               title: const Text(AppStrings.aboutItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.about),
             ),
             ListTile(
-              leading: const Icon(Icons.flutter_dash),
+              leading: const Icon(Icons.source),
               title: const Text(AppStrings.viewSourceItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.viewSource),
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.rate_review),
+              leading: const Icon(Icons.reviews),
               title: const Text(AppStrings.rateItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.rate),
             ),
