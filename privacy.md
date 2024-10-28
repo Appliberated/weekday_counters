@@ -1,4 +1,4 @@
-This page is used to inform users of [Weekday Counters](https://appliberated.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
+This page is used to inform users of [Weekday Counters](https://hellogramming.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
 
 If you choose to use our App, then you agree to the collection and use of information in relation with this policy.
 
@@ -26,4 +26,4 @@ This policy is effective as of April 18, 2024.
 
 ## Contact Us
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://appliberated.com/support/).
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://hellogramming.com/support/).

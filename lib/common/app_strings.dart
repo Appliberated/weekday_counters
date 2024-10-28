@@ -1,6 +1,7 @@
-// Copyright 2020-2024 Appliberated (https://appliberated.com). All rights reserved.
-// Licensed under the MIT License. See LICENSE in the project root for license information.
-// @author TechAurelian <dev@techaurelian.com> (https://techaurelian.com)
+// Copyright 2020-2024 Hellogramming. All rights reserved.
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://hellogramming.com/weekdaycounters/license/.
 
 import '../screens/home_screen.dart';
 
@@ -34,11 +35,11 @@ class AppStrings {
 
   static String shareText(String name, String value) => 'The $name is $value';
 
-  static const String rateAppURL = 'https://appliberated.com/weekdaycounters/rate/';
+  static const String rateAppURL = 'https://hellogramming.com/weekdaycounters/rate/';
 
-  static const String aboutURL = 'https://appliberated.com/weekdaycounters/';
+  static const String aboutURL = 'https://hellogramming.com/weekdaycounters/';
 
-  static const String viewSourceURL = 'https://github.com/Appliberated/weekday_counters';
+  static const String viewSourceURL = 'https://github.com/Hellogramming/weekday_counters';
 
   // -----------------------------------------------------------------------------------------------
   // Main functionality
