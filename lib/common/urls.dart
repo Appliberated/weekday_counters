@@ -6,8 +6,11 @@
 // Url constants used throughout the app.
 library;
 
-const String feedbackURL = 'https://hellogramming.com/weekdaycounters/feedback/';
-
+/// The app's home page URL.
 const String aboutURL = 'https://hellogramming.com/weekdaycounters/';
 
+/// The URL to the source code repository of the app.
 const String viewSourceURL = 'https://github.com/Hellogramming/weekday_counters';
+
+/// The URL for sending feedback.
+const String feedbackURL = 'https://hellogramming.com/weekdaycounters/feedback/';

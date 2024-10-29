@@ -32,8 +32,9 @@ class CountersDrawer extends StatelessWidget {
   /// Called when the user taps a drawer list tile.
   final void Function(DrawerExtraActions value)? onExtraSelected;
 
+  /// Handles the tap event on an extra action.
   void _onExtraActionTap(BuildContext context, DrawerExtraActions action) {
-    Navigator.pop(context);
+    Navigator.pop(context); // Close the drawer
     onExtraSelected?.call(action);
   }
 
@@ -45,7 +46,10 @@ class CountersDrawer extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             _buildDrawerHeader(context, counters.current.color),
+
+            // Add a list tile for each counter type
             ...CounterType.values.map((type) => _buildCounterListTile(context, type)),
+
             const Divider(),
             ListTile(
               leading: const Icon(Icons.settings),
@@ -74,6 +78,7 @@ class CountersDrawer extends StatelessWidget {
     );
   }
 
+  /// Builds the drawer header.
   Widget _buildDrawerHeader(BuildContext context, Color color) {
     return DrawerHeader(
       child: Center(
@@ -85,6 +90,7 @@ class CountersDrawer extends StatelessWidget {
     );
   }
 
+  /// Builds a list tile for the counter of the specified type.
   Widget _buildCounterListTile(BuildContext context, CounterType counterType) {
     return ColorListTile(
       color: Counter.colorOf(counterType),

@@ -8,12 +8,14 @@ import 'package:flutter/material.dart';
 import '../common/app_settings.dart';
 import '../common/strings.dart' as strings;
 
+/// The app settings screen.
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({
     super.key,
     required this.appSettings,
   });
 
+  /// The app settings that can be changed in this screen.
   final AppSettings appSettings;
 
   @override
@@ -28,7 +30,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
         title: const Text(strings.settingsTitle),
       ),
       body: ListView(
-        children: [
+        children: <Widget>[
+          // Add the counter tap mode switch list tile
           SwitchListTile(
             activeColor: Colors.black,
             value: widget.appSettings.counterTapMode,

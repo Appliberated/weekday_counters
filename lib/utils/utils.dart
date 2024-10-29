@@ -23,6 +23,9 @@ Future<void> launchUrlExternal(String url) async {
 /// Utility Color extension methods.
 extension ColorX on Color {
   /// Returns the contrast color for this color.
-  Color contrastOf() =>
-      ThemeData.estimateBrightnessForColor(this) == Brightness.light ? Colors.black : Colors.white;
+  Color contrastOf() {
+    return ThemeData.estimateBrightnessForColor(this) == Brightness.light
+        ? Colors.black
+        : Colors.white;
+  }
 }

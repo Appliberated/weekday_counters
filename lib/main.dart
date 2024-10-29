@@ -9,12 +9,12 @@ import 'common/strings.dart' as strings;
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const CountersApp());
+  runApp(const WeekdayCountersApp());
 }
 
-/// The app widget.
-class CountersApp extends StatelessWidget {
-  const CountersApp({super.key});
+/// The main app widget for the Weekday Counters app.
+class WeekdayCountersApp extends StatelessWidget {
+  const WeekdayCountersApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,9 +5,11 @@
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Persistent app settings.
 class AppSettings {
   bool _counterTapMode = false;
 
+  /// The setting for whether counters are incremented by tapping the screen.
   bool get counterTapMode => _counterTapMode;
 
   set counterTapMode(bool value) {
