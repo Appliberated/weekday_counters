@@ -81,6 +81,7 @@ class CountersDrawer extends StatelessWidget {
   /// Builds the drawer header.
   Widget _buildDrawerHeader(BuildContext context, Color color) {
     return DrawerHeader(
+      decoration: BoxDecoration(color: Colors.grey[50]),
       child: Center(
         child: Text(
           title,
