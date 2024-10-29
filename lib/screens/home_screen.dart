@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../common/app_settings.dart';
-import '../common/app_strings.dart';
+import '../common/strings.dart' as strings;
+import '../common/urls.dart' as urls;
 import '../models/counter.dart';
 import '../utils/utils.dart';
 import '../widgets/accept_cancel_dialog.dart';
@@ -55,10 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
         // Reset the counter after asking for confirmation.
         showAcceptCancelDialog(
           context,
-          AppStrings.resetConfirmTitle,
-          AppStrings.resetConfirmMessage,
-          AppStrings.resetConfirmReset,
-          AppStrings.resetConfirmCancel,
+          strings.resetConfirmTitle,
+          strings.resetConfirmMessage,
+          strings.resetConfirmReset,
+          strings.resetConfirmCancel,
           () => setState(() => _counters.current.reset()),
         );
         break;
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
         // Share the current counter value using the platform's share sheet.
         final String name = _counters.current.name;
         final String value = toDecimalString(context, _counters.current.value);
-        Share.share(AppStrings.shareText(name, value), subject: name);
+        Share.share(strings.shareText(name, value), subject: name);
         break;
     }
   }
@@ -79,15 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
       case DrawerExtraActions.about:
         // Launch the app online help url
-        launchUrlExternal(AppStrings.aboutURL);
+        launchUrlExternal(urls.aboutURL);
         break;
       case DrawerExtraActions.viewSource:
         // Launch the app source code repo url
-        launchUrlExternal(AppStrings.viewSourceURL);
+        launchUrlExternal(urls.viewSourceURL);
         break;
-      case DrawerExtraActions.rate:
+      case DrawerExtraActions.feedback:
         // Launch the Google Play Store page to allow the user to rate the app
-        launchUrlExternal(AppStrings.rateAppURL);
+        launchUrlExternal(urls.feedbackURL);
         break;
     }
   }
@@ -144,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
           (item) => PopupMenuItem<MenuAction>(
             value: item,
             enabled: !(item == MenuAction.reset && _counters.current.value == 0),
-            child: Text(AppStrings.menuActions[item]!),
+            child: Text(strings.menuActions[item]!),
           ),
         )
         .toList();
@@ -153,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
   /// Builds the main drawer that lets the user switch between color counters.
   Widget _buildDrawer() {
     return CountersDrawer(
-      title: AppStrings.drawerTitle,
+      title: strings.drawerTitle,
       counters: _counters,
       onExtraSelected: drawerExtraSelection,
     );
@@ -166,16 +167,16 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         FloatingActionButton.large(
-          heroTag: AppStrings.decrementHeroTag,
+          heroTag: strings.decrementHeroTag,
           onPressed: () => setState(() => _counters.current.decrement()),
-          tooltip: AppStrings.decrementTooltip,
+          tooltip: strings.decrementTooltip,
           child: const Icon(Icons.remove),
         ),
         isPortrait ? const SizedBox(height: 16.0) : const SizedBox(width: 16.0),
         FloatingActionButton.large(
-          heroTag: AppStrings.incrementHeroTag,
+          heroTag: strings.incrementHeroTag,
           onPressed: () => setState(() => _counters.current.increment()),
-          tooltip: AppStrings.incrementTooltip,
+          tooltip: strings.incrementTooltip,
           child: const Icon(Icons.add),
         )
       ],

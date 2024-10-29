@@ -5,13 +5,13 @@
 
 import 'package:flutter/material.dart';
 
-import '../common/app_strings.dart';
+import '../common/strings.dart' as strings;
 import '../models/counter.dart';
 import '../utils/utils.dart';
 import 'color_list_tile.dart';
 
 /// Drawer extra actions enumeration.
-enum DrawerExtraActions { settings, about, rate, viewSource }
+enum DrawerExtraActions { settings, about, feedback, viewSource }
 
 /// A material design drawer that shows navigation links for all available counters.
 class CountersDrawer extends StatelessWidget {
@@ -49,24 +49,24 @@ class CountersDrawer extends StatelessWidget {
             const Divider(),
             ListTile(
               leading: const Icon(Icons.settings),
-              title: const Text(AppStrings.settingsItemTitle),
+              title: const Text(strings.settingsItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.settings),
             ),
             ListTile(
               leading: const Icon(Icons.help),
-              title: const Text(AppStrings.aboutItemTitle),
+              title: const Text(strings.aboutItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.about),
             ),
             ListTile(
               leading: const Icon(Icons.source),
-              title: const Text(AppStrings.viewSourceItemTitle),
+              title: const Text(strings.viewSourceItemTitle),
               onTap: () => _onExtraActionTap(context, DrawerExtraActions.viewSource),
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.reviews),
-              title: const Text(AppStrings.rateItemTitle),
-              onTap: () => _onExtraActionTap(context, DrawerExtraActions.rate),
+              leading: const Icon(Icons.rate_review),
+              title: const Text(strings.feedbackItemTitle),
+              onTap: () => _onExtraActionTap(context, DrawerExtraActions.feedback),
             ),
           ],
         ),
@@ -75,9 +75,8 @@ class CountersDrawer extends StatelessWidget {
   }
 
   Widget _buildDrawerHeader(BuildContext context, Color color) {
-    return SizedBox(
-      height: kToolbarHeight + 8.0,
-      child: DrawerHeader(
+    return DrawerHeader(
+      child: Center(
         child: Text(
           title,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(color: color),
