@@ -1,4 +1,4 @@
-This page is used to inform users of [Weekday Counters](https://hellogramming.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
+This page is used to inform users of [Weekday Counters](https://www.tecdrop.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
 
 If you choose to use our App, then you agree to the collection and use of information in relation with this policy.
 
@@ -22,8 +22,8 @@ Weekday Counters may contain links to other sites (such as GitHub). If you click
 
 We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.
 
-This policy is effective as of April 18, 2024.
+This policy was last updated on 2025-04-29.
 
 ## Contact Us
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://hellogramming.com/support/).
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://www.tecdrop.com/support/).

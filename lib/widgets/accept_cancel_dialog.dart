@@ -1,7 +1,7 @@
-// Copyright 2020-2024 Hellogramming. All rights reserved.
+// Copyright 2020-2025 Tecdrop. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://hellogramming.com/weekdaycounters/license/.
+// https://www.tecdrop.com/weekdaycounters/license/.
 
 import 'package:flutter/material.dart';
 
@@ -15,28 +15,29 @@ void showAcceptCancelDialog(
   VoidCallback onAccept,
 ) {
   showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(message),
-          actions: <Widget>[
-            TextButton(
-              style: TextButton.styleFrom(foregroundColor: Colors.black),
-              child: Text(cancelButton.toUpperCase()),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              style: TextButton.styleFrom(foregroundColor: Colors.black),
-              child: Text(acceptButton.toUpperCase()),
-              onPressed: () {
-                onAccept();
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      });
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: <Widget>[
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.black),
+            child: Text(cancelButton.toUpperCase()),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.black),
+            child: Text(acceptButton.toUpperCase()),
+            onPressed: () {
+              onAccept();
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

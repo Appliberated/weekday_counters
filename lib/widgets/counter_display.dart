@@ -1,7 +1,7 @@
-// Copyright 2020-2024 Hellogramming. All rights reserved.
+// Copyright 2020-2025 Tecdrop. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://hellogramming.com/weekdaycounters/license/.
+// https://www.tecdrop.com/weekdaycounters/license/.
 
 import 'package:flutter/material.dart';
 
@@ -28,9 +28,10 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? counterStyle = isPortrait
-        ? Theme.of(context).textTheme.displayLarge
-        : Theme.of(context).textTheme.displayMedium;
+    final TextStyle? counterStyle =
+        isPortrait
+            ? Theme.of(context).textTheme.displayLarge
+            : Theme.of(context).textTheme.displayMedium;
 
     return Container(
       alignment: Alignment.center,

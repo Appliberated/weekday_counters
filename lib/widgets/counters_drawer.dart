@@ -1,7 +1,7 @@
-// Copyright 2020-2024 Hellogramming. All rights reserved.
+// Copyright 2020-2025 Tecdrop. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://hellogramming.com/weekdaycounters/license/.
+// https://www.tecdrop.com/weekdaycounters/license/.
 
 import 'package:flutter/material.dart';
 
@@ -83,10 +83,7 @@ class CountersDrawer extends StatelessWidget {
     return DrawerHeader(
       decoration: BoxDecoration(color: Colors.grey[50]),
       child: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(color: color),
-        ),
+        child: Text(title, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: color)),
       ),
     );
   }

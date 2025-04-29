@@ -1,7 +1,7 @@
-// Copyright 2020-2024 Hellogramming. All rights reserved.
+// Copyright 2020-2025 Tecdrop. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://hellogramming.com/weekdaycounters/license/.
+// https://www.tecdrop.com/weekdaycounters/license/.
 
 import 'package:flutter/material.dart';
 
@@ -95,8 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Navigates to the Settings screen, and refreshes on return.
   Future<void> _loadSettingsScreen() async {
-    await Navigator.push<void>(context,
-        MaterialPageRoute(builder: (context) => SettingsScreen(appSettings: _appSettings)));
+    await Navigator.push<void>(
+      context,
+      MaterialPageRoute(builder: (context) => SettingsScreen(appSettings: _appSettings)),
+    );
     setState(() {
       /* Refresh after returning from Settings screen. */
     });
@@ -115,12 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       drawer: _buildDrawer(),
-      body: _appSettings.counterTapMode
-          ? GestureDetector(
-              onTap: () => setState(() => _counters.current.increment()),
-              child: counterDisplay,
-            )
-          : counterDisplay,
+      body:
+          _appSettings.counterTapMode
+              ? GestureDetector(
+                onTap: () => setState(() => _counters.current.increment()),
+                child: counterDisplay,
+              )
+              : counterDisplay,
       floatingActionButton: !(_appSettings.counterTapMode) ? _buildFABs(isPortrait) : null,
     );
   }
@@ -130,10 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return AppBar(
       title: Text(_counters.current.name),
       actions: <Widget>[
-        PopupMenuButton<MenuAction>(
-          onSelected: popupMenuSelection,
-          itemBuilder: _buildMenuItems,
-        ),
+        PopupMenuButton<MenuAction>(onSelected: popupMenuSelection, itemBuilder: _buildMenuItems),
       ],
     );
   }
@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () => setState(() => _counters.current.increment()),
           tooltip: strings.incrementTooltip,
           child: const Icon(Icons.add),
-        )
+        ),
       ],
     );
   }
