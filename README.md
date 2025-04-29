@@ -22,6 +22,14 @@ Thank you for contributing! Weekday Counters is designed to be as simple and use
 * testing and reporting bugs
 * creating a nice icon to replace the [current one](web/icons/Icon-512.png)
 
+## Support Us
+
+Weekday Counters is a free Hello World app, and we love creating and sharing projects like this, and other useful [free apps](https://www.tecdrop.com/apps/free/) with the community. If you want to support us, try our Pro apps:
+
+| Our Pro Apps | [Pitch Black Wallpaper Pro](https://www.tecdrop.com/pitchblackwallpaperpro/) | [RGB Color Wallpaper Pro](https://www.tecdrop.com/rgbcolorwallpaperpro/) |
+| ------------ | ------------------------- | --- |
+| <a href="https://www.tecdrop.com/apps/pro/"><img width="200" src="repo-assets/tecdrop-pro-apps.png" alt="Tecdrop Pro Apps" /></a> | <li>Pitch black & dark wallpapers</li><li>AI-generated wallpapers</li><li>Enhances battery life</li><li>Reduces eyestrain</li> | <li>Set any color as wallpaper</li><li>Endless color options, built-in & custom</li><li>Reduce visual clutter</li><li>Enhanced device aesthetics</li> |
+
 ## License
 
 Weekday Counters is released under the [MIT License](/LICENSE).
