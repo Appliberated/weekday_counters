@@ -62,7 +62,7 @@ class _ColorFilledCircle extends StatelessWidget {
   /// Creates a circular widget filled with the specified [Color].
   ///
   /// The [color] parameter must not be null.
-  // ignore: unused_element
+  // ignore: unused_element_parameter
   const _ColorFilledCircle({super.key, required this.color, this.diameter = 40.0, this.border});
 
   /// The color with which to fill the circle.

@@ -20,7 +20,7 @@ An open list of apps built with Flutter
 Thank you for contributing! Weekday Counters is designed to be as simple and useless as possible, but you can still help with:
 
 * testing and reporting bugs
-* creating a nice icon to replace the [current one](android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
+* creating a nice icon to replace the [current one](web/icons/Icon-512.png)
 
 ## License
 
