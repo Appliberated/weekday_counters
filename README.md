@@ -1,5 +1,13 @@
 # Weekday Counters
 
+[![Version badge](https://img.shields.io/github/v/tag/HelloTecdrop/weekday_counters?color=forestgreen&label=version)](https://github.com/HelloTecdrop/weekday_counters/releases)
+[![PWA Installable badge](https://img.shields.io/badge/-installable-5A0FC8?logo=pwa)](https://weekdaycounters.tecdrop.com/)
+[![MIT License badge](https://img.shields.io/github/license/HelloTecdrop/weekday_counters?color=9c0000)](LICENSE)
+[![GitHub Code Size badge](https://img.shields.io/github/languages/code-size/HelloTecdrop/weekday_counters)](https://github.com/HelloTecdrop/weekday_counters)
+[![Style badge](https://img.shields.io/badge/style-flutter__lints-4BC0F5.svg)](https://pub.dev/packages/flutter_lints)
+[![Contributions Welcome badge](https://img.shields.io/badge/contributions-welcome-cornflowerblue)](#Contributing)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/HelloTecdrop/weekday_counters/total)
+
 Weekday Counters is an easy-to-use Hello World counter app for Android. It gives you a different counter for each day of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. You can increment or decrement the counter, reset its value back to zero, or share it by email, messengers, or in social networks.
 
 "Hello World" programs are pretty famous, even if all they do is write "Hello World!" on the screen. When learning a new programming language or platform, starting with such a simple program has become a tradition.
@@ -9,6 +17,11 @@ Weekday Counters is built with [Flutter](https://flutter.dev), an open source fr
 ## Screenshot
 
 <img width="270" src="repo-assets/weekdaycounters-readme-screenshot-mobile.png" alt="Weekday Counters screenshot">
+
+## Try Weekday Counters
+
+* **On Android:** Get it from [GitHub Releases](https://github.com/HelloTecdrop/weekday_counters/releases).
+* **On any platform:** [Run the web app](https://weekdaycounters.tecdrop.com/) and/or install it from your browser on Android, ChromeOS, iOS, Linux, macOS, Windows, etc.
 
 ## Listed on
 
