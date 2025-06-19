@@ -1,7 +1,7 @@
-// Copyright 2020-2025 Tecdrop. All rights reserved.
+// Copyright 2020-2025 Appliberated. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://www.tecdrop.com/weekdaycounters/license/.
+// https://www.appliberated.com/weekdaycounters/license/.
 
 import 'package:flutter/material.dart';
 
@@ -117,13 +117,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       drawer: _buildDrawer(),
-      body:
-          _appSettings.counterTapMode
-              ? GestureDetector(
-                onTap: () => setState(() => _counters.current.increment()),
-                child: counterDisplay,
-              )
-              : counterDisplay,
+      body: _appSettings.counterTapMode
+          ? GestureDetector(
+              onTap: () => setState(() => _counters.current.increment()),
+              child: counterDisplay,
+            )
+          : counterDisplay,
       floatingActionButton: !(_appSettings.counterTapMode) ? _buildFABs(isPortrait) : null,
     );
   }

@@ -1,4 +1,4 @@
-This page is used to inform users of [Weekday Counters](https://www.tecdrop.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
+This page is used to inform users of [Weekday Counters](https://www.appliberated.com/weekdaycounters/) regarding our policies with the collection, use, and disclosure of Personal Information.
 
 If you choose to use our App, then you agree to the collection and use of information in relation with this policy.
 
@@ -26,4 +26,4 @@ This policy was last updated on 2025-04-29.
 
 ## Contact Us
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://www.tecdrop.com/support/).
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://www.appliberated.com/support/).

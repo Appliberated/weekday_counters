@@ -1,7 +1,7 @@
-// Copyright 2020-2025 Tecdrop. All rights reserved.
+// Copyright 2020-2025 Appliberated. All rights reserved.
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
-// https://www.tecdrop.com/weekdaycounters/license/.
+// https://www.appliberated.com/weekdaycounters/license/.
 
 // UI string constants used throughout the app.
 library;
