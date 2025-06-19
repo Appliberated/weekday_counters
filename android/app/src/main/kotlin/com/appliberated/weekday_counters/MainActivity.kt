@@ -1,4 +1,4 @@
-package com.tecdrop.weekday_counters
+package com.appliberated.weekday_counters
 
 import io.flutter.embedding.android.FlutterActivity
 
